@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: dev
+
+
+
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.github.seckill.entity

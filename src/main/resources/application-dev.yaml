@@ -1,0 +1,9 @@
+server:
+  port: 8888
+
+spring:
+  datasource:
+    url: jdbc:mysql://10.254.7.226:3306/uco_core?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: cloudos
+    driver-class-name: com.mysql.cj.jdbc.Driver
