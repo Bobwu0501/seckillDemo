@@ -30,7 +30,6 @@ public class InstanceServiceImpl implements InstanceService {
         } catch (Exception e) {
             log.error("error 实例列表");
         }
-
         return instanceMapper.queryInstanceList();
     }
 }

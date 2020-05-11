@@ -4,7 +4,6 @@
 
     <select id="queryInstanceList" resultType="instance">
         select * from uco_core.db_nosql_instances
-        where status = 'deleted'
     </select>
 
 
