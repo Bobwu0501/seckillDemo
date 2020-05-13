@@ -24,12 +24,6 @@ public class InstanceServiceImpl implements InstanceService {
 
     @Override
     public List<Instance> queryInstanceList() {
-        log.info("查询实例列表");
-        try {
-            int i = 1 / 0;
-        } catch (Exception e) {
-            log.error("error 实例列表");
-        }
         return instanceMapper.queryInstanceList();
     }
 }
