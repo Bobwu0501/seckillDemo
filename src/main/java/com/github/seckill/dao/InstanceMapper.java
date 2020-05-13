@@ -1,7 +1,7 @@
 package com.github.seckill.dao;
 
 
-import com.github.seckill.entity.Instance;
+import com.github.seckill.entity.instances.Instance;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

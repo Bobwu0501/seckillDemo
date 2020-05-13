@@ -1,7 +1,7 @@
 package com.github.seckill.service.impl;
 
 import com.github.seckill.dao.InstanceMapper;
-import com.github.seckill.entity.Instance;
+import com.github.seckill.entity.instances.Instance;
 import com.github.seckill.service.InstanceService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -24,6 +24,7 @@ public class InstanceServiceImpl implements InstanceService {
 
     @Override
     public List<Instance> queryInstanceList() {
+
         return instanceMapper.queryInstanceList();
     }
 }

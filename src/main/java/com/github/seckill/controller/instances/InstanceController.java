@@ -1,7 +1,6 @@
-package com.github.seckill.controller;
+package com.github.seckill.controller.instances;
 
-import com.github.seckill.config.ServerConfig;
-import com.github.seckill.entity.Instance;
+import com.github.seckill.entity.instances.Instance;
 import com.github.seckill.entity.vo.RestfulEntity;
 import com.github.seckill.service.InstanceService;
 import org.springframework.web.bind.annotation.GetMapping;

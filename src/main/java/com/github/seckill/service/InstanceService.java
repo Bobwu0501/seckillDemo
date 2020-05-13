@@ -1,6 +1,6 @@
 package com.github.seckill.service;
 
-import com.github.seckill.entity.Instance;
+import com.github.seckill.entity.instances.Instance;
 
 import java.util.List;
 

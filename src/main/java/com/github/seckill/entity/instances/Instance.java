@@ -1,4 +1,4 @@
-package com.github.seckill.entity;
+package com.github.seckill.entity.instances;
 
 import lombok.Data;
 import org.apache.ibatis.type.Alias;
