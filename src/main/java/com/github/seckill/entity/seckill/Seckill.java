@@ -3,7 +3,8 @@ package com.github.seckill.entity.seckill;
 import lombok.Data;
 import org.apache.ibatis.type.Alias;
 
-import java.sql.Date;
+import java.util.Date;
+
 
 /**
  * @author bobwu

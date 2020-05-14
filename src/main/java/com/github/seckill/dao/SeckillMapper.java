@@ -2,7 +2,9 @@ package com.github.seckill.dao;
 
 import com.github.seckill.entity.seckill.Seckill;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -16,8 +18,9 @@ public interface SeckillMapper {
 
     List<Seckill> querySeckillList();
 
+    Seckill getSeckillById(long seckillId);
 
-
+    int reduceProductNumber(@Param("seckillId") long seckillId, @Param("killTime") Date killTime);
 
 
 }

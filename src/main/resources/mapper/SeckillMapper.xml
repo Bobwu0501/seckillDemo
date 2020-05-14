@@ -3,8 +3,21 @@
 <mapper namespace="com.github.seckill.dao.SeckillMapper">
 
     <select id="querySeckillList" resultType="seckill">
-        select * from seckill.seckill
+        select * from seckill
     </select>
 
+    <select id="getSeckillById" parameterType="long" resultType="seckill">
+        select * from seckill
+        where seckill_id = #{seckillId}
+    </select>
+
+    <update id="reduceProductNumber">
+        update seckill
+        set number = number -1
+        where seckill_id = #{seckillId}
+        and start_time &lt;= #{killTime}
+        and end_time &gt;= #{killTime}
+        and number > 0
+    </update>
 
 </mapper>

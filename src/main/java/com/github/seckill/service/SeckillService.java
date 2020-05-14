@@ -1,6 +1,8 @@
 package com.github.seckill.service;
 
 import com.github.seckill.entity.seckill.Seckill;
+import com.github.seckill.entity.vo.Exposer;
+import com.github.seckill.entity.vo.SeckillExecution;
 
 import java.util.List;
 
@@ -13,6 +15,12 @@ import java.util.List;
 public interface SeckillService {
 
     List<Seckill> seckillList();
+
+    Seckill getSeckillById(Long seckillId);
+
+    Exposer exportSeckillUrl(long seckillId);
+
+    SeckillExecution executeSeckill(long seckillId, long userPhone, String md5);
 
 
 }

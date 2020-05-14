@@ -59,7 +59,7 @@
     </root>
 
     <!-- logback为java中的包 -->
-    <logger name="com.github.seckill.dao" level="debug">
+    <logger name="com.github.seckill.dao" level="debug" additivity="false">
         <appender-ref ref="console"/>
     </logger>
     <!--logback.LogbackDemo：类的全路径 -->

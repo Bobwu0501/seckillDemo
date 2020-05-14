@@ -41,7 +41,6 @@ public class WebLogAspect {
     public void afterReturning(Object res) throws Throwable {
         //处理完成后，打印日志
         log.info("===== RESPONSE : " + res.toString());
-
     }
 
 
