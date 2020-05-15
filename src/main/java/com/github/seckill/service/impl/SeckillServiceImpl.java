@@ -1,5 +1,6 @@
 package com.github.seckill.service.impl;
 
+import com.github.seckill.constant.SeckillStateEnum;
 import com.github.seckill.dao.SeckillMapper;
 import com.github.seckill.dao.SuccessSeckilledMapper;
 import com.github.seckill.entity.seckill.Seckill;
@@ -12,6 +13,7 @@ import com.github.seckill.exception.SeckillException;
 import com.github.seckill.service.SeckillService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 
 import javax.annotation.Resource;
@@ -70,6 +72,7 @@ public class SeckillServiceImpl implements SeckillService {
     }
 
     @Override
+    @Transactional
     public SeckillExecution executeSeckill(long seckillId, long userPhone, String md5) throws SeckillException {
 
         //校验md5
@@ -92,16 +95,17 @@ public class SeckillServiceImpl implements SeckillService {
                 } else {
                     //秒杀成功，得到成功插入明细记录，并返回成功秒杀的信息
                     SuccessKilled successKilled = successSeckilledMapper.querySuccessKilledByIdWithSeckill(seckillId, userPhone);
-                    return new SeckillExecution(seckillId, successKilled.getState(), "success", successKilled);
+                    return new SeckillExecution(seckillId, SeckillStateEnum.SUCCESS, successKilled);
                 }
-
             }
-
-
+        } catch (RepeatKillException e) {
+            throw e;
+        } catch (SeckillClosedException e2) {
+            throw e2;
+        } catch (Exception e3) {
+            log.error(e3.getMessage());
+            throw new SeckillException("seckil inner error : " + e3.getMessage());
         }
-
-
-        return null;
     }
 
     private String getMd5(long seckillId) {

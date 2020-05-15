@@ -4,7 +4,7 @@
 
 
     <insert id="insertSuccessKilled">
-        insert into success_killed
+        insert ignore into success_killed
         (seckill_id,user_phone,state)
         values
         (#{seckillId},#{userPhone},0)
@@ -14,8 +14,8 @@
         select
         sk.seckill_id,
         sk.user_phone,
-        sk,create_time,
         sk.state,
+        sk.create_time,
         s.seckill_id "seckill.seckill_id",
         s.name "seckill.name",
         s.number "seckill.number",
