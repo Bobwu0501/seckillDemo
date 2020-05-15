@@ -1,8 +1,13 @@
 package com.github.seckill.controller;
 
+import com.github.seckill.config.RedisConfig;
+import com.github.seckill.config.RedisService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+import java.util.Optional;
 
 /**
  * 描述：
@@ -14,8 +19,14 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class TestController {
 
+    @Resource
+    private RedisService redisService;
+
+
     @GetMapping("/test")
     public String test() {
+        Optional<Object> wsy = redisService.get("wsy");
+        System.out.println(wsy.toString());
         return "service is ok.";
     }
 
