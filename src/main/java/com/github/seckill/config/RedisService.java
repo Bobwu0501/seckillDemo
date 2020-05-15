@@ -19,4 +19,17 @@ public interface RedisService {
     Optional<Object> get(String key);
 
 
+
+
+
+    /**
+     * 是否存在key
+     *
+     * @param key
+     * @return
+     */
+    Boolean existsKey(String key);
+
+
+
 }

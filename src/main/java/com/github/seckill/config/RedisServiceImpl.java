@@ -31,6 +31,10 @@ public class RedisServiceImpl implements RedisService {
         Object value = redisTemplate.opsForValue().get(key);
         log.info("获取缓存，key：{}，value：{}", key, value);
         return Optional.ofNullable(value);
+    }
 
+    @Override
+    public Boolean existsKey(String key) {
+        return redisTemplate.hasKey(key);
     }
 }

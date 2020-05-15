@@ -26,7 +26,8 @@ public class TestController {
     @GetMapping("/test")
     public String test() {
         Optional<Object> wsy = redisService.get("wsy");
-        System.out.println(wsy.toString());
+        String value = wsy.get().toString();
+        System.out.println(value);
         return "service is ok.";
     }
 
