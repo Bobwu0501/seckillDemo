@@ -34,7 +34,18 @@ public class RedisServiceImpl implements RedisService {
     }
 
     @Override
+    public void set(String key, Object value) {
+        if (StringUtils.isBlank(key)){
+            log.error("redisKey参数为空");
+            throw new NullPointerException("redisKey参数为空");
+        }
+        redisTemplate.opsForValue().set(key,value);
+    }
+
+    @Override
     public Boolean existsKey(String key) {
         return redisTemplate.hasKey(key);
     }
+
+
 }

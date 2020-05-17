@@ -19,7 +19,14 @@ public interface RedisService {
     Optional<Object> get(String key);
 
 
-
+    /**
+     * set缓存值
+     *
+     * @param key
+     * @param value
+     * @return
+     */
+    void set(String key, Object value);
 
 
     /**
@@ -29,7 +36,6 @@ public interface RedisService {
      * @return
      */
     Boolean existsKey(String key);
-
 
 
 }
