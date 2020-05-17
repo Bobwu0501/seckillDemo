@@ -18,5 +18,5 @@ public class TestController {
     public String test() {
         return "service is ok.";
     }
-    
+
 }

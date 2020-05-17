@@ -1,4 +1,4 @@
-package com.github.seckill.config;
+package com.github.seckill.config.redis;
 
 import java.util.Optional;
 
